@@ -12,7 +12,8 @@ namespace NaughtyAttributes.Editor
         static PropertyDrawerDatabase()
         {
             drawersByAttributeType = new Dictionary<Type, PropertyDrawer>();
-            drawersByAttributeType[typeof(DisableIfAttribute)] = new DisableIfPropertyDrawer();
+            drawersByAttributeType[typeof(CurveRangeAttribute)] = new RangeAttributePropertyDrawer();
+drawersByAttributeType[typeof(DisableIfAttribute)] = new DisableIfPropertyDrawer();
 drawersByAttributeType[typeof(DropdownAttribute)] = new DropdownPropertyDrawer();
 drawersByAttributeType[typeof(EnableIfAttribute)] = new EnableIfPropertyDrawer();
 drawersByAttributeType[typeof(LabelAttribute)] = new LabelPropertyDrawer();
@@ -24,6 +25,7 @@ drawersByAttributeType[typeof(ResizableTextAreaAttribute)] = new ResizableTextAr
 drawersByAttributeType[typeof(ShowAssetPreviewAttribute)] = new ShowAssetPreviewPropertyDrawer();
 drawersByAttributeType[typeof(SliderAttribute)] = new SliderPropertyDrawer();
 drawersByAttributeType[typeof(TagAttribute)] = new TagPropertyDrawer();
+drawersByAttributeType[typeof(VectorRangeAttribute)] = new VectorRangePropertyDrawer();
 
         }
 
