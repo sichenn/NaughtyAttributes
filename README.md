@@ -8,6 +8,17 @@ It is implemented by replacing the default Unity Inspector. This means that if y
 ## System Requirements
 Unity 2017.1.0 or later versions. Feel free to try older version. Don't forget to include the NaughtyAttributes namespace.
 
+## Install
+Find `Packages/manifest.json` in your project and edit it to look like this:
+```js
+{
+  "dependencies": {
+    "com.dbrizov.naughtyattributes": "https://github.com/sichenn/NaughtyAttributes.git#upm",
+    ...
+  }
+}
+```
+
 ## Drawer Attributes
 Provide special draw options to serialized fields.
 A field can have only one DrawerAttribute. If a field has more than one, only the bottom one will be used.
