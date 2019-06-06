@@ -1,0 +1,12 @@
+{
+    "name": "com.dbrizov.naughtyattributes",
+    "displayName": "Naughty Attributes",
+    "description": "NaughtyAttributes is an extension for the Unity Inspector. It expands the range of attributes that Unity provides so that you can create powerful inspectors without the need of custom editors or property drawers.",
+    "version": "1.0.0",
+    "category": "Editor",
+    "samples": [{
+        "displayName": "Demo",
+        "description": "Examples of all Naughty Attributes on the inspector",
+        "path": "Samples~/Demo"
+    }]
+}
