@@ -8,7 +8,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(LabelAttribute))]
     public class LabelPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             var labelAttribute = PropertyUtility.GetAttribute<LabelAttribute>(property);
             UnityEngine.Object target = PropertyUtility.GetTargetObject(property);

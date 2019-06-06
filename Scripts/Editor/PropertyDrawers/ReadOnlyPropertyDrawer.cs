@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             GUI.enabled = false;
             EditorDrawUtility.DrawPropertyField(property);

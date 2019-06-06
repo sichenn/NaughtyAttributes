@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(VectorRangeAttribute))]
     public class VectorRangePropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(UnityEditor.SerializedProperty property)
+        public override void DrawProperty(UnityEditor.SerializedProperty property, UnityEngine.GUIContent label)
         {
             var attribute = PropertyUtility.GetAttribute<VectorRangeAttribute>(property);
             UnityEngine.Object target = PropertyUtility.GetTargetObject(property);

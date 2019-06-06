@@ -5,7 +5,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(SliderAttribute))]
     public class SliderPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, UnityEngine.GUIContent label)
         {
             EditorDrawUtility.DrawHeader(property);
 

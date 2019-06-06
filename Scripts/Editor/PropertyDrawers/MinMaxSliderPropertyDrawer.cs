@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(MinMaxSliderAttribute))]
     public class MinMaxSliderPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EditorDrawUtility.DrawHeader(property);
 
@@ -45,7 +45,9 @@ namespace NaughtyAttributes.Editor
                     controlRect.height);
 
                 // Draw the label
-                EditorGUI.LabelField(labelRect, property.displayName);
+                EditorGUI.LabelField(labelRect, label);
+                // EditorGUI.BeginProperty(labelRect, label, property);
+                // Debug.Log("property displayname: " + property.displayName + ", text: " + label.text + "tooltip: " + label.tooltip);
 
                 // Draw the slider
                 EditorGUI.BeginChangeCheck();

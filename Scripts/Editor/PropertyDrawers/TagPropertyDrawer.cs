@@ -11,7 +11,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(TagAttribute))]
     public class TagPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             UnityEngine.Object target = PropertyUtility.GetTargetObject(property);
 

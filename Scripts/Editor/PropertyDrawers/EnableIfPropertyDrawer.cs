@@ -8,7 +8,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(EnableIfAttribute))]
     public class EnableIfPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EnableIfAttribute enableIfAttribute = PropertyUtility.GetAttribute<EnableIfAttribute>(property);
             UnityEngine.Object target = PropertyUtility.GetTargetObject(property);

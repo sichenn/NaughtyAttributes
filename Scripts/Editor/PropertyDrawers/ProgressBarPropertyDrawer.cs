@@ -7,7 +7,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(ProgressBarAttribute))]
     public class ProgressBarPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EditorDrawUtility.DrawHeader(property);
 

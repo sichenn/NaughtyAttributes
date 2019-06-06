@@ -12,6 +12,6 @@ public class Sliders : MonoBehaviour
     public float floatSlider;
 
     [BoxGroup("Sliders")]
-    [MinMaxSlider(0.0f, 100.0f)]
+    [MinMaxSlider(0.0f, 100.0f), Tooltip("test")]
     public Vector2 minMaxSlider;
 }

@@ -15,7 +15,7 @@ namespace NaughtyAttributes.Editor
             return property.serializedObject.targetObject.GetInstanceID() + "/" + property.name;
         }
 
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EditorDrawUtility.DrawHeader(property);
 

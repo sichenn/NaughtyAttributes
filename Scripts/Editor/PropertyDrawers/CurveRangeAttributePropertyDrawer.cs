@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(CurveRangeAttribute))]
     public class RangeAttributePropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             var attribute = PropertyUtility.GetAttribute<CurveRangeAttribute>(property);
             UnityEngine.Object target = PropertyUtility.GetTargetObject(property);

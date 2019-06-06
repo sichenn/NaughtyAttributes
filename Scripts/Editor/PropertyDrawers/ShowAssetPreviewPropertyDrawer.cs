@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(ShowAssetPreviewAttribute))]
     public class ShowAssetPreviewPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EditorDrawUtility.DrawPropertyField(property);
 

@@ -10,7 +10,7 @@ namespace NaughtyAttributes.Editor
     [PropertyDrawer(typeof(DropdownAttribute))]
     public class DropdownPropertyDrawer : PropertyDrawer
     {
-        public override void DrawProperty(SerializedProperty property)
+        public override void DrawProperty(SerializedProperty property, GUIContent label)
         {
             EditorDrawUtility.DrawHeader(property);
 

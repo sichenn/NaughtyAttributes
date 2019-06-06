@@ -211,7 +211,7 @@ Then you need to create a drawer for that attribute
 [PropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyPropertyDrawer : PropertyDrawer
 {
-	public override void DrawProperty(SerializedProperty property)
+	public override void DrawProperty(SerializedProperty property, GUIContent label)
 	{
 		GUI.enabled = false;
 		EditorGUILayout.PropertyField(property, true);

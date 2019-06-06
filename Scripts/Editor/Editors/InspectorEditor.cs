@@ -90,6 +90,7 @@ namespace NaughtyAttributes.Editor
 
         public override void OnInspectorGUI()
         {
+            UnityEngine.Profiling.Profiler.BeginSample("Drawing " + this.name);
             if (this.useDefaultInspector)
             {
                 this.DrawDefaultInspector();
@@ -140,6 +141,7 @@ namespace NaughtyAttributes.Editor
                 }
 
                 this.serializedObject.ApplyModifiedProperties();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
 
             // Draw non-serialized fields
@@ -234,12 +236,22 @@ namespace NaughtyAttributes.Editor
         }
 
         private void DrawField(FieldInfo field)
-        {        
+        {
+
             EditorGUI.BeginChangeCheck();
             PropertyDrawer drawer = this.GetPropertyDrawerForField(field);
             if (drawer != null)
             {
-                drawer.DrawProperty(this.serializedPropertiesByFieldName[field.Name]);
+                TooltipAttribute tooltipAttribute = (TooltipAttribute)field.GetCustomAttribute(typeof(TooltipAttribute));
+                SerializedProperty property = this.serializedPropertiesByFieldName[field.Name]; 
+                if (tooltipAttribute != null)
+                {
+                    drawer.DrawProperty(property, new GUIContent(property.displayName, tooltipAttribute.tooltip));
+                }
+                else
+                {
+                    drawer.DrawProperty(property, new GUIContent(property.displayName));
+                }
             }
             else
             {
