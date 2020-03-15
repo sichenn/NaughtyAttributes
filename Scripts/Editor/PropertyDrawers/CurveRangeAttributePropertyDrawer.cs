@@ -3,17 +3,17 @@ using UnityEditor;
 
 namespace NaughtyAttributes.Editor
 {
-    [PropertyDrawer(typeof(CurveRangeAttribute))]
-    public class RangeAttributePropertyDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(CurveRangeAttribute))]
+    public class CurveRangeAttributePropertyDrawer : PropertyDrawerBase
     {
-        public override void DrawProperty(SerializedProperty property, GUIContent label)
+        protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)
         {
             var attribute = PropertyUtility.GetAttribute<CurveRangeAttribute>(property);
-            UnityEngine.Object target = PropertyUtility.GetTargetObject(property);
-
-            EditorDrawUtility.DrawHeader(property);
-            EditorGUILayout.CurveField(property, attribute.color,
-            new Rect(0, 0, attribute.width, attribute.height));
+            EditorGUI.BeginProperty(rect, label, property);
+            //EditorGUI.PropertyField(rect, property, label, true);
+            EditorGUI.CurveField(rect, property, attribute.color.GetColor(),
+                new Rect(attribute.x, attribute.y, attribute.width, attribute.height));
+            EditorGUI.EndProperty();
         }
     }
 }
